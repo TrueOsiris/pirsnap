@@ -2,3 +2,15 @@ pirsnap
 =======
 
 Pirsnap - Surveillance Cam python script for Raspberry pi + Noir cam + PIR
+
+Put the pirsnap.py in /scripts/ (or change the path in the init.d script)
+put the init.d script in /etc/init.d/ and rename it to 'pirsnap'
+
+This script does not contain a diskcheck and file cleanup anymore.
+I've installed bittorrent sync and had it sync the /mnt/pics folder to my nas.
+From these I create timelapse vids and I move the actual jpgs elsewhere, hence 
+ keeping my rasp clean. It has a 64GB sd anyway, so it can hold about 2 months
+ without touching the folder.
+ 
+In development : 
+- measure daylight & go for a longer exposure when it gets darker.
