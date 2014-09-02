@@ -1,7 +1,7 @@
 pirsnap
 =======
 
-Pirsnap - Surveillance Cam python script for Raspberry pi + Noir cam + PIR
+Pirsnap - Surveillance Cam python script for Raspberry pi + Noir cam + PIR motion sensor
 
 Instructions:
 - Put the pirsnap.py in /scripts/ (or change the path in the init.d script)
