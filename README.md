@@ -3,8 +3,10 @@ pirsnap
 
 Pirsnap - Surveillance Cam python script for Raspberry pi + Noir cam + PIR
 
-Put the pirsnap.py in /scripts/ (or change the path in the init.d script)
-put the init.d script in /etc/init.d/ and rename it to 'pirsnap'
+Instructions:
+- Put the pirsnap.py in /scripts/ (or change the path in the init.d script)
+- put the init.d script in /etc/init.d/ and rename it to 'pirsnap'
+- To autostart run: update-rc.d pirsnap defaults
 
 This script does not contain a diskcheck and file cleanup anymore.
 I've installed bittorrent sync and had it sync the /mnt/pics folder to my nas.
