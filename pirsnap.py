@@ -2,6 +2,8 @@
 #############################################################################
 #  Pirsnap 1.0 Motion sensed supervisor                                     #
 #  Written by Tim Chaubet                                                   #
+#  Python 2.7.3 (default, Mar 18 2014, 05:13:23)                            #
+#  [GCC 4.6.3] on linux2                                                    #
 #                                                                           #
 #  Requirements:                                                            #
 #  - Raspberry pi with raspbian, updated until at least 2014-09             #
