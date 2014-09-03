@@ -1,29 +1,30 @@
 #!/usr/bin/python
-#############################################################################
-#  Pirsnap 1.0 Motion sensed supervisor                                     #
-#  Written by Tim Chaubet                                                   #                                                #
-#                                                                           #
-#  Requirements:                                                            #
-#  - Python 2.7.3 with GCC 4.6.3                                            #
-#  - Raspberry pi with raspbian, updated until at least 2014-09             #
-#  - PIR motion sensor, output on pin 12                                    #
-#  - Noir infrared camera module                                            #
-#                                                                           #
-#  Snapshots are taken according to a certain schedule OR when motion is    #
-#  detected. For each day, a subfolder (format YYYY-MM-DD) is created       #
-#  in which jpgs will arrive.                                               #
-#  While motion is being detected, pictures will be taken at certain        #
-#  definable intervals                                                      #
-#                                                                           #
-#  This program is free software: you can redistribute it and/or modify     #
-#  it under the terms of the GNU General Public License as published by     #
-#  the Free Software Foundation, either version 3 of the License, or        #
-#  (at your option) any later version.                                      #
-#  This program is distributed in the hope that it will be useful,          #
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of           #
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the             #
-#  GNU General Public License for more details.                             #
-#############################################################################
+"""
+  Pirsnap 1.0 Motion sensed supervisor                                     
+  Written by Tim Chaubet                                                                                                   #
+                                                                           
+  Requirements:                                                            
+  - Python 2.7.3 with GCC 4.6.3                                            
+  - Raspberry pi with raspbian, updated until at least 2014-09             
+  - PIR motion sensor, output on pin 12                                    
+  - Noir infrared camera module                                            
+                                                                           
+  Snapshots are taken according to a certain schedule OR when motion is    
+  detected. For each day, a subfolder (format YYYY-MM-DD) is created       
+  in which jpgs will arrive.                                               
+  While motion is being detected, pictures will be taken at certain        
+  definable intervals                                                      
+                                                                           
+  This program is free software: you can redistribute it and/or modify     
+  it under the terms of the GNU General Public License as published by     
+  the Free Software Foundation, either version 3 of the License, or        
+  (at your option) any later version.                                      
+  This program is distributed in the hope that it will be useful,          
+  but WITHOUT ANY WARRANTY; without even the implied warranty of           
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the             
+  GNU General Public License for more details.                             
+  
+"""
 
 import RPi.GPIO as GPIO
 import time
