@@ -96,11 +96,11 @@ try:
             if check==0:                                #  Was the current minute not checked yet ? if so ...
                 if curmin in mins and curhour in hours: #   Check scheduled hours-mins.
                     saveImage(scSuffix)                 #    When this is a scheduled minute, take pic
-            check=1
+            check=1                                     #  Set the 'minute checked' flag to yes
         else:                                           # Is this minute NOT the one saved in 'curmin' ?
             curmin = time.strftime('%M')                # Set this minute as the new 'curmin'
-            curhour = time.strftime('%H')
-            check=0
+            curhour = time.strftime('%H')               # Set this hour as the new 'curhour'
+            check=0                                     # Set the 'minute checked' flag to 'no'
                                                         ### Motion sensor check ###
         currState = GPIO.input(sensorPin)               # get sensor pin status. Gets 1 on detection.                                                        
         if currState==1 and prevState==0:               # Did the sensor just trigger ? if yes ...
