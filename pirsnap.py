@@ -91,7 +91,6 @@ try:
     while GPIO.input(sensorPin)==1:                     # initialization of pin & state
         currState = 0
     while True:                                         # Will execute about 10 times per second
-        currState = GPIO.input(sensorPin)               # get sensor pin status. Gets 1 on detection.
                                                         #### Scheduler check ####
         if time.strftime('%M')==curmin:                 # Is this minute the one saved in 'curmin' ?
             if check==0:                                #  Has the current minute already been checked?
@@ -103,14 +102,16 @@ try:
             curhour = time.strftime('%H')
             check=0
                                                         #### Motion sensor check ####
-        if currState==1 and prevState==0:               # Did the sensor just trigger ?
-            saveImage(moSuffix)                         # Take a picture
-            prevState=1                                 # set previous-sensorcheck on
+        currState = GPIO.input(sensorPin)               # get sensor pin status. Gets 1 on detection.                                                        
+        if currState==1 and prevState==0:               # Did the sensor just trigger ? if yes ...
+            saveImage(moSuffix)                         #  Take a picture
+            prevState=1                                 #  set previous-sensorcheck on
             t = datetime.now() + timedelta(seconds=motionDelta)
-            cursec = t.strftime('%M%S')                 # set 'cursec' to 'delta' seconds in the future
-        elif currState==0 and prevState==1:             # Did the sensor just un-trigger (no more motion)
-            prevState=0                                 # set previous-sensorcheck off
-        if datetime.now() > t:                          # if beyond previously set future 'cursec'
-            prevState=0                                 # set previous-sensorcheck off anyway
+            cursec = t.strftime('%M%S')                 #  set 'cursec' to 'delta' seconds in the future
+        elif currState==0 and prevState==1:             # if the sensor just un-trigger (no more motion) ...
+            prevState=0                                 #  set previous-sensorcheck off
+        if datetime.now() > t:                          # if beyond previously set future 'cursec' moment ...
+            prevState=0                                 #  set previous-sensorcheck off anyway
+            
 except KeyboardInterrupt:
         GPIO.cleanup()
