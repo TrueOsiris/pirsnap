@@ -1,28 +1,28 @@
 #!/usr/bin/python
 """
   Pirsnap 1.0 Motion sensed supervisor                                     
-  Written by Tim Chaubet                                                                                                   #
-                                                                           
-  Requirements:                                                            
-  - Python 2.7.3 with GCC 4.6.3                                            
-  - Raspberry pi with raspbian, updated until at least v14             
-  - PIR motion sensor, output on pin 12                                    
-  - Noir infrared camera module                                            
-                                                                           
-  Snapshots are taken according to a certain schedule OR when motion is    
-  detected. For each day, a subfolder (format YYYY-MM-DD) is created       
-  in which jpgs will arrive.                                               
-  While motion is being detected, pictures will be taken at certain        
-  definable intervals                                                      
-                                                                           
-  This program is free software: you can redistribute it and/or modify     
-  it under the terms of the GNU General Public License as published by     
-  the Free Software Foundation, either version 3 of the License, or        
-  (at your option) any later version.                                      
-  This program is distributed in the hope that it will be useful,          
-  but WITHOUT ANY WARRANTY; without even the implied warranty of           
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the             
-  GNU General Public License for more details.                             
+  Written by Tim Chaubet
+
+  Requirements:
+  - Python 2.7.3 with GCC 4.6.3 
+  - Raspberry pi with raspbian, updated until at least v14
+  - PIR motion sensor, output on pin 12
+  - Noir infrared camera module
+
+  Snapshots are taken according to a certain schedule OR when motion is
+  detected. For each day, a subfolder (format YYYY-MM-DD) is created
+  in which jpgs will arrive.
+  While motion is being detected, pictures will be taken at certain
+  definable intervals 
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  GNU General Public License for more details.
   
 """
 
@@ -91,7 +91,7 @@ try:
     while GPIO.input(sensorPin)==1:                     # initialization of pin & state
         currState = 0
     while True:                                         # Will execute about 10 times per second
-                                                        """ Scheduler check """
+                                                        ### Scheduler check ###
         if time.strftime('%M')==curmin:                 # Is this minute the one saved in 'curmin' ? if yes ...
             if check==0:                                #  Was the current minute not checked yet ? if so ...
                 if curmin in mins and curhour in hours: #   Check scheduled hours-mins.
@@ -101,7 +101,7 @@ try:
             curmin = time.strftime('%M')                # Set this minute as the new 'curmin'
             curhour = time.strftime('%H')
             check=0
-                                                        """ Motion sensor check """
+                                                        ### Motion sensor check ###
         currState = GPIO.input(sensorPin)               # get sensor pin status. Gets 1 on detection.                                                        
         if currState==1 and prevState==0:               # Did the sensor just trigger ? if yes ...
             saveImage(moSuffix)                         #  Take a picture
