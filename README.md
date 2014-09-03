@@ -3,6 +3,16 @@ pirsnap
 
 Pirsnap - Surveillance Cam python script for Raspberry pi + Noir cam + PIR motion sensor
 
+Requirements:                                                            
+- Python 2.7.3 with GCC 4.6.3                                            
+- Raspberry pi with raspbian, updated until at least v14
+- PIR motion sensor, output on pin 12                                    
+- Noir infrared camera module                                            
+
+Snapshots are taken according to a certain schedule OR when motion is detected. For 
+each day, a subfolder (format YYYY-MM-DD) is created in which jpgs will arrive.                                         
+While motion is being detected, pictures will be taken at certain definable intervals.
+
 Instructions:
 - Put the pirsnap.py in /scripts/ (or change the path in the init.d script)
   pirsnap.py can be run from command line as is.
