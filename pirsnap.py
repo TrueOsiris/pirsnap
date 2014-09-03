@@ -92,9 +92,9 @@ try:
         currState = 0
     while True:                                         # Will execute about 10 times per second
                                                         """ Scheduler check """
-        if time.strftime('%M')==curmin:                 # Is this minute the one saved in 'curmin' ?
-            if check==0:                                #  Has the current minute already been checked?
-                if curmin in mins and curhour in hours: #   If not, check scheduled hours-mins.
+        if time.strftime('%M')==curmin:                 # Is this minute the one saved in 'curmin' ? if yes ...
+            if check==0:                                #  Was the current minute not checked yet ? if so ...
+                if curmin in mins and curhour in hours: #   Check scheduled hours-mins.
                     saveImage(scSuffix)                 #    When this is a scheduled minute, take pic
             check=1
         else:                                           # Is this minute NOT the one saved in 'curmin' ?
