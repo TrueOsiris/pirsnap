@@ -5,7 +5,7 @@
                                                                            
   Requirements:                                                            
   - Python 2.7.3 with GCC 4.6.3                                            
-  - Raspberry pi with raspbian, updated until at least 2014-09             
+  - Raspberry pi with raspbian, updated until at least v14             
   - PIR motion sensor, output on pin 12                                    
   - Noir infrared camera module                                            
                                                                            
