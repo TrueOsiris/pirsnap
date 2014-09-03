@@ -91,7 +91,7 @@ try:
     while GPIO.input(sensorPin)==1:                     # initialization of pin & state
         currState = 0
     while True:                                         # Will execute about 10 times per second
-                                                        #### Scheduler check ####
+                                                        """ Scheduler check """
         if time.strftime('%M')==curmin:                 # Is this minute the one saved in 'curmin' ?
             if check==0:                                #  Has the current minute already been checked?
                 if curmin in mins and curhour in hours: #   If not, check scheduled hours-mins.
@@ -101,7 +101,7 @@ try:
             curmin = time.strftime('%M')                # Set this minute as the new 'curmin'
             curhour = time.strftime('%H')
             check=0
-                                                        #### Motion sensor check ####
+                                                        """ Motion sensor check """
         currState = GPIO.input(sensorPin)               # get sensor pin status. Gets 1 on detection.                                                        
         if currState==1 and prevState==0:               # Did the sensor just trigger ? if yes ...
             saveImage(moSuffix)                         #  Take a picture
