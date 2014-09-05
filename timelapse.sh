@@ -1,5 +1,5 @@
 #!/bin/sh
-# requires mencoder
+# requires mencoder & basename
 # adapt basedir to your needs
 #
 thisdir=`pwd`
