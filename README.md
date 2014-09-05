@@ -29,8 +29,8 @@ Notes:
    keeping my rasp clean. It has a 64GB sd anyway, so it can hold about 2 months
    without touching the folder. 
 - On the nas where the pics arrive btsynced, I have 2 cronjobs:<br>
-   59 23 * * * /bin/timelapse
-   00 01 * * * /bin/timelapse_full
+   59 23 * * * /bin/timelapse<br>
+   00 01 * * * /bin/timelapse_full<br>
   These create timelapse avi's using mencoder. I've added the bash scripts.
 - I'm using 2 rasps as a construction site supervisor as anti-theft system and
   to create a timelapse video of our house being built.
